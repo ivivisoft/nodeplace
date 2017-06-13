@@ -1,0 +1,15 @@
+#chat {
+    display: none;
+}
+
+.confirmed {
+    font-style: oblique;
+}
+
+#results a {
+    display: none;
+}
+
+form.isDj #results a {
+    display: inline;
+}

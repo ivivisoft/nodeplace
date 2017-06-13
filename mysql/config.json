@@ -1,0 +1,6 @@
+{
+  "host": "localhost",
+  "database": "cart-example",
+  "user": "root",
+  "password": "study"
+}

@@ -1,0 +1,23 @@
+extends layout
+block body
+    h2 所有商品
+    if (items.length)
+        ul
+            each item in items
+                li
+                    h3: a(href="/item/"+item.id)= item.title
+                    = item.description
+    else
+        p 没有商品可以显示
+
+    h2 创建新商品
+    form(action="/create",method="POST")
+        p
+            label 标题
+            input(type="text",name="title")
+        p
+            label 描述
+            textarea(name="description")
+        p
+            button 提交
+

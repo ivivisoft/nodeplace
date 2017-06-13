@@ -1,0 +1,32 @@
+extends layout
+block body
+    a(href="/") Go back
+
+    h2= item.title
+    p= item.description
+        h3 用户评价
+        if (reviews.length)
+            each review in reviews
+                .review
+                    b #{review.stars} 星
+                    p= review.text
+                hr
+        else
+            p 暂时没有用户评价. 写一个呗!
+
+        form(action="/item/"+item.id+"/review",method="POST")
+            fieldset
+                legend 创建评论
+                p
+                    label 星级评价
+                    select(name="stars")
+                        option 1
+                        option 2
+                        option 3
+                        option 4
+                        option 5
+                p
+                    label 评论
+                    textarea(name="text")
+                p
+                    button(type="submit") 评价
